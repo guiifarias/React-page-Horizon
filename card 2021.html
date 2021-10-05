@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title> Cards tela</title>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+.btn{
+  border-radius: 20px;
+}
+    </style>
+    <!-- Bootstrap Icon-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Header() {
+        return (
+        <div className="container bg-white text-black p-5">
+          <h1 className="text-center">Explore o PlayStation®4</h1>
+          <p  className="text-center">Jogos incríveis e diversão sem parar. Nunca houve época melhor para se divertir com o PS4.</p>
+        </div>
+        );
+      }
+
+      function Card(props) {
+        return (
+          <div className="card">
+            <img src={props.image} className="card-img-top" alt={props.title} title={props.title} />
+            <div className="card-body">
+              <h5 className="card-title">{props.title}</h5>
+              <p className="card-text">{props.text}</p>
+              <a href="#" className="btn btn-primary">Saiba Mais</a>
+            </div>
+          </div>
+        )
+      }
+
+      function Produtos() {
+        const Produtos = [
+          {
+            id: 1,
+            image: 'https://gmedia.playstation.com/is/image/SIEPDC/ps4-slim-homepage-image-block-04-en-09oct20?$1600px$',
+            title: 'PlayStation 4',
+            description: 'Os jogos mais incriveis estão no PS4, com 1TB de armazenamento'
+          },
+          {
+            id: 2,
+            image: 'https://gmedia.playstation.com/is/image/SIEPDC/double11-202010-tw-psvr?$1600px$',
+            title: 'PlayStation VR',
+            description: 'Mais de 500 jogos e experiências, e subindo. Conheça todos eles.'
+          },
+          {
+            id: 3,
+            image: 'https://gmedia.playstation.com/is/image/SIEPDC/dualshock-4-listing-thumb-01-ps4-en-12oct20?$1600px$',
+            title: 'Acessórios',
+            description: 'Aprimore sua experiência PS4 com vários acessórios oficiais.'
+          }
+        ]
+        return (
+          Produtos.map(
+            Produto_row =>(
+              <div className="col-4">
+                <Card title={Produto_row.title} image={Produto_row.image} text={Produto_row.description} />
+              </div>
+            )
+          )
+        )
+      }
+
+      function Main() {
+        return (
+          <div>
+            <div className="container">
+              <div className="row">
+                <Produtos />
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      
+      function Template() {
+        return (
+        <div>
+          <Header />
+          <Main />
+        </div>
+        );
+      }
+
+      let template = <Template />;
+
+      ReactDOM.render(
+        template,
+        document.getElementById('root')
+      )
+    </script>
+  </body>
+</html>

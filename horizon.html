@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HORIZON</title>
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <!-- JavaScript Bundle with Popper -->
+     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+     <!--Poppins-->
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+     
+     <!--JQuery-->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+     <!--CSS-->
+     <style>
+         .btn{
+            border-radius: 20px;
+
+            }
+             
+        .ajuste{
+            height: 400px;
+        }
+
+        .ajuste2{
+
+            height: 200px;
+            
+        }
+    
+
+        span{
+            color: black;
+            
+        }
+
+        p{
+            color: white;
+            font-weight: 300;
+        }
+
+        h1{
+            color: white;
+            font-weight: 300;
+
+        }
+
+        .bg-plus{
+            background-image: url("https://image.api.playstation.com/vulcan/ap/rnd/202010/2915/SqRcyLjZbpK26ej6TnWf43xp.jpg");
+            width: 100%;
+            background-size:cover;
+            background-repeat: no-repeat;
+            padding-top: 50px;
+        }
+     </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+<script type="text/babel">
+    function Plus(){
+        return(
+        <section className="bg-plus">
+            <div className="container">
+                <div className="col-6">
+                        <img src="https://gmedia.playstation.com/is/image/SIEPDC/horizon-forbidden-west-white-logo-01-ps5-en-02sep21?$1200px--t$" alt="logo" className="ajuste2 mb-4 mt-5 "/>
+                        <h1>Disponível em 18 de fevereiro de 2022</h1>
+                        <p>Junte-se à Aloy para desbravar o Oeste Proibido, uma área majestosa e perigosa que esconde novas ameaças misteriosas.</p>
+                        <button className="btn btn-light m-4"><span>Explore a Franquia Horizon</span></button>
+                     <div id="butaoXd">
+                    </div>
+                 </div>   
+            </div>
+        </section>
+        );
+    }
+
+
+    function Template() {
+    return (
+        <div>
+        <Plus />
+        </div>
+        );
+      }
+
+    let template = <Template />;
+
+    ReactDOM.render(
+    template,
+    document.getElementById('root')
+    )
+</script>
+
+</body>
+</html>
